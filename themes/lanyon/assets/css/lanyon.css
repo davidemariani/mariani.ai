@@ -51,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -.025rem;
 }
 
+p {
+  font-family: Helvetica;
+}
+
 
 /*
  * Wrapper
@@ -102,15 +106,15 @@ h1, h2, h3, h4, h5, h6 {
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
-  color: #505050;
+  color: #593196;
 }
 .masthead-title a {
-  color: #505050;
+  color: #593196;
 }
 .masthead-title small {
   font-size: 75%;
   font-weight: 400;
-  color: #c0c0c0;
+  color: #593196;
   letter-spacing: 0;
 }
 
@@ -312,7 +316,11 @@ a.sidebar-nav-item:focus {
 }
 
 /* Blog post or page title */
-.page-title,
+.page-title, a {
+  color: #593196;
+}
+
+
 .post-title,
 .post-title a {
   color: #303030;

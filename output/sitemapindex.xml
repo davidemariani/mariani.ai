@@ -6,39 +6,47 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://mariani.ai/authors/davide-mariani.xml</loc>
+  <lastmod>2021-12-05T19:55:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariani.ai/authors/roberto-alsina.xml</loc>
+  <lastmod>2021-12-05T18:46:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariani.ai/categories/blog.xml</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2021-12-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/categories/cat_nikola.xml</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2021-12-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/categories/demo.xml</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2021-12-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/categories/nikola.xml</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2021-12-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/categories/python.xml</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2021-12-05T18:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/galleries/demo/rss.xml</loc>
-  <lastmod>2021-12-05T12:09:00Z</lastmod>
+  <lastmod>2021-12-05T20:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/galleries/rss.xml</loc>
-  <lastmod>2021-12-05T12:09:00Z</lastmod>
+  <lastmod>2021-12-05T20:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/rss.xml</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2021-12-05T19:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/sitemap.xml</loc>
-  <lastmod>2021-12-05T12:09:00Z</lastmod>
+  <lastmod>2021-12-05T20:01:00Z</lastmod>
  </sitemap>
 </sitemapindex>

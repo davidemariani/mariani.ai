@@ -2,14 +2,14 @@
 <html prefix="" lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Davide Mariani personal website">
+<meta name="description" content="Davide Mariani's personal website. Here I share my views on Machine Learning, Deep Learning and AI.">
 <meta name="viewport" content="width=device-width">
 <title>mariani.ai | mariani.ai</title>
 <link href="assets/css/all.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://mariani.ai/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/welcome-to-nikola/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/jupyer-try/" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -17,10 +17,12 @@
             styles, `#sidebar-checkbox` for behavior. -->
     <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
         <div class="sidebar-item">
-            <p>Davide Mariani personal website</p>
+            <p>Davide Mariani's personal website. Here I share my views on Machine Learning, Deep Learning and AI.</p>
         </div>
         
-    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="archive.html">Archive</a>
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="#">Home</a>
+        <a class="sidebar-nav-item" href="pages/about/">About</a>
+        <a class="sidebar-nav-item" href="archive.html">Archive</a>
         <a class="sidebar-nav-item" href="categories/">Tags</a>
         <a class="sidebar-nav-item" href="rss.xml">RSS feed</a>
     
@@ -45,30 +47,136 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/welcome-to-nikola/" class="u-url">Welcome to Nikola</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/jupyer-try/" class="u-url">jupyer try</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Roberto Alsina</span></p>
-            <p class="dateline"><a href="posts/welcome-to-nikola/" rel="bookmark"><time class="post-date published dt-published" datetime="2012-03-30T23:00:00-03:00" title="2012-03-30 23:00">2012-03-30 23:00</time></a></p>
+            <p class="byline author vcard"><span class="byline-name fn">Davide Mariani</span></p>
+            <p class="dateline"><a href="posts/jupyer-try/" rel="bookmark"><time class="post-date published dt-published" datetime="2021-12-05T00:00:00+00:00" title="5 Dec, 2021">5 Dec, 2021</time></a></p>
                 <p class="commentline">
         
 
 
         </p>
 </div>
-    </header><div class="e-content entry-content">
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="nPlan-assessment">nPlan assessment<a class="anchor-link" href="posts/jupyer-try/#nPlan-assessment">¶</a>
+</h3>
+<p>Davide Mariani</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="modules-import">modules import<a class="anchor-link" href="posts/jupyer-try/#modules-import">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">decomposition</span>
+
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'punkt'</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'stopwords'</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.stem.snowball</span> <span class="kn">import</span> <span class="n">SnowballStemmer</span>
+
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">EarlyStopping</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Input</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.losses</span> <span class="kn">import</span> <span class="n">BinaryCrossentropy</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+<span class="kn">from</span> <span class="nn">tensorflow.random</span> <span class="kn">import</span> <span class="n">set_seed</span>
+
+<span class="kn">from</span> <span class="nn">spektral.data</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">Graph</span>
+<span class="kn">from</span> <span class="nn">spektral.data</span> <span class="kn">import</span> <span class="n">DisjointLoader</span>
+<span class="kn">from</span> <span class="nn">spektral.layers</span> <span class="kn">import</span> <span class="n">GATConv</span>
+<span class="kn">from</span> <span class="nn">spektral.transforms</span> <span class="kn">import</span> <span class="n">LayerPreprocess</span>
+
+<span class="kn">from</span> <span class="nn">tensorflow_addons.metrics</span> <span class="kn">import</span> <span class="n">F1Score</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\david\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\david\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="posts/jupyer-try/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/welcome-to-nikola/" class="u-url">Welcome to Nikola</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Roberto Alsina</span></p>
+            <p class="dateline"><a href="posts/welcome-to-nikola/" rel="bookmark"><time class="post-date published dt-published" datetime="2012-03-30T23:00:00-03:00" title="30 Mar, 2012">30 Mar, 2012</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
     <div>
 <figure><a class="reference external image-reference" href="https://farm1.staticflickr.com/138/352972944_4f9d568680_z.jpg?zz=1"><img alt="Nikola Tesla Corner by nicwest, on Flickr" class="thumbnail" src="https://farm1.staticflickr.com/138/352972944_4f9d568680.jpg"></a>
 </figure><p>If you can see this in a web browser, it means you managed to install Nikola,
 and build a site using it. Congratulations!</p>
-<p>Next steps:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="pages/handbook/">Read the manual</a></p></li>
-<li><p><a class="reference external" href="https://getnikola.com">Visit the Nikola website to learn more</a></p></li>
-<li><p><a class="reference external" href="galleries/demo/">See a demo photo gallery</a></p></li>
-<li><p><a class="reference external" href="pages/listings-demo/">See a demo listing</a></p></li>
-<li><p><a class="reference external" href="pages/dr-nikolas-vendetta/">See a demo of a longer text</a></p></li>
-</ul>
-<p>Send feedback to <a class="reference external" href="mailto:info@getnikola.com">info@getnikola.com</a>!</p>
+<p class="more"><a href="posts/welcome-to-nikola/">Read more…</a></p>
 </div>
     </div>
     </article>
@@ -81,11 +189,10 @@ and build a site using it. Congratulations!</p>
 
 
     
-
-
-
         
-        <footer id="footer"><p>Contents © 2021         <a href="mailto:davide@mariani.ai">Davide Mariani</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script><footer id="footer"><p>Contents © 2021         <a href="mailto:davide@mariani.ai">Davide Mariani</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
