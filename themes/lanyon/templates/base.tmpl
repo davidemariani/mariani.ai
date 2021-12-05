@@ -24,7 +24,7 @@ ${template_hooks['extra_head']()}
         <div class="sidebar-item">
           <div class="logo">
             <p style="text-align:center;"">
-              <img src="images/mariani-ai-logo-name.png" alt="mariani.ai logo" width="200" height= auto />
+              <img src=${logo_url} alt="mariani.ai logo" width="150" height= auto />
            </p>
          </div>
             <p>${blog_description}</p>
@@ -37,7 +37,18 @@ ${template_hooks['extra_head']()}
     <div class="wrap">
       <div class="masthead">
         <div class="container">
-          ${header.html_site_title()}
+
+          % if logo_url:
+            <div class="logo">
+              <span style="text-align:center;"">
+                <img src=${logo_url} alt="mariani.ai logo" width="200" height= auto />
+              </span>
+            </div>
+          % endif
+
+         % if show_blog_title:
+             <span id="blog-title">${header.html_site_title()}</span>
+         % endif
         </div>
       </div>
 
