@@ -760,3 +760,8 @@ a.pagination-item:hover {
 .tags > li a {
   color: #fff;
 }
+
+/* code bug fix 
+.linenos {
+  width: 3rem;
+}*/
