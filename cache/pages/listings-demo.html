@@ -1,0 +1,15 @@
+<p>Nikola intends to let you show code easily via listings:</p>
+<p><a class="reference external" href="link://listing/listings/hello.py">hello.py</a>  <a class="reference external" href="link://listing_source/listings/hello.py">(Source)</a></p>
+<pre class="code python"><a id="rest_code_c03a0922523c4d9f842289502875da27-1" name="rest_code_c03a0922523c4d9f842289502875da27-1"></a><span class="ch">#!/usr/bin/python</span>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-2" name="rest_code_c03a0922523c4d9f842289502875da27-2"></a>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-3" name="rest_code_c03a0922523c4d9f842289502875da27-3"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-4" name="rest_code_c03a0922523c4d9f842289502875da27-4"></a>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-5" name="rest_code_c03a0922523c4d9f842289502875da27-5"></a>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-6" name="rest_code_c03a0922523c4d9f842289502875da27-6"></a><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;world&#39;</span><span class="p">):</span>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-7" name="rest_code_c03a0922523c4d9f842289502875da27-7"></a>    <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;hello &quot;</span> <span class="o">+</span> <span class="n">name</span>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-8" name="rest_code_c03a0922523c4d9f842289502875da27-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-9" name="rest_code_c03a0922523c4d9f842289502875da27-9"></a>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-10" name="rest_code_c03a0922523c4d9f842289502875da27-10"></a>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-11" name="rest_code_c03a0922523c4d9f842289502875da27-11"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="rest_code_c03a0922523c4d9f842289502875da27-12" name="rest_code_c03a0922523c4d9f842289502875da27-12"></a>    <span class="n">hello</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</pre>
