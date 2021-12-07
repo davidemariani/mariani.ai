@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 h2 {
   margin-top: 1rem;
@@ -631,7 +631,7 @@ p {
   padding-top:    1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 3px solid #593196;
 }
 .masthead-title {
   margin-top: 0;
@@ -1299,7 +1299,15 @@ a.pagination-item:hover {
   color: #fff;
 }
 
-/* code bug fix 
-.linenos {
-  width: 3rem;
-}*/
+/* logo*/
+
+.myLogo {
+  width: 180px;
+  height: auto;
+  margin-right: 0;
+  margin-top:auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+

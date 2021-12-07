@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Davide Mariani's Homepage (Posts by Davide Mariani)</title><link>https://mariani.ai/</link><description></description><atom:link href="https://mariani.ai/authors/davide-mariani.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:davide@mariani.ai"&gt;Davide Mariani&lt;/a&gt; </copyright><lastBuildDate>Sun, 05 Dec 2021 20:16:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>jupyer try</title><link>https://mariani.ai/posts/jupyer-try/</link><dc:creator>Davide Mariani</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Davide Mariani's personal blog (Posts by Davide Mariani)</title><link>https://mariani.ai/</link><description></description><atom:link href="https://mariani.ai/authors/davide-mariani.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:davide@mariani.ai"&gt;Davide Mariani&lt;/a&gt; </copyright><lastBuildDate>Tue, 07 Dec 2021 23:41:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>An intro to Graph Neural Networks</title><link>https://mariani.ai/posts/an-intro-to-graph-neural-networks/</link><dc:creator>Davide Mariani</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;em&gt;Geometric Deep Learning&lt;/em&gt; has seen an impressive increase in popularity over the past few years, and since pretty much everything can be modelled as a graph, I have been more and more curious about it.&lt;br&gt;
+In this post, I will try to compress the main intuitions (at a very high level) behind &lt;em&gt;Graph neural networks&lt;/em&gt;, so that it will be easier to get to more detailed aspects in the future posts.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="What-is-a-graph?"&gt;What is a graph?&lt;a class="anchor-link" href="https://mariani.ai/posts/an-intro-to-graph-neural-networks/#What-is-a-graph?"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A graph is a data structure made of &lt;em&gt;nodes (or vertices)&lt;/em&gt; connected by &lt;em&gt;edges (or links)&lt;/em&gt;; to simplify, we can say that edges represent the relationships between nodes.&lt;br&gt;
+Depending on the way the edges link the nodes, we can distinguish between &lt;em&gt;directed graphs&lt;/em&gt; (in which direction matters and is specified at each edge) and &lt;em&gt;undirected graphs&lt;/em&gt; (in which edges have no specified direction and can be traversed how we desire).&lt;/p&gt;
+&lt;div&gt;
+        &lt;img src="https://mariani.ai/images/undirected_directed_graph.png" alt="Drawing" width="300" style="float: right;"&gt;
+        &lt;img src="https://mariani.ai/images/complete_acyclic_graph.png" alt="Drawing" width="300" style="float: right;"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;There are many examples of information that can be represented through graphs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;chemical molecular structures or interactions between proteins (like the &lt;a href="https://paperswithcode.com/dataset/ppi"&gt;PPI&lt;/a&gt; dataset)&lt;/li&gt;
+&lt;li&gt;document citation networks (like the &lt;a href="https://relational.fit.cvut.cz/dataset/CORA"&gt;CORA&lt;/a&gt; dataset)&lt;/li&gt;
+&lt;li&gt;social media networks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://mariani.ai/posts/an-intro-to-graph-neural-networks/</guid><pubDate>Tue, 07 Dec 2021 23:41:11 GMT</pubDate></item><item><title>jupyer try</title><link>https://mariani.ai/posts/jupyer-try/</link><dc:creator>Davide Mariani</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="nPlan-assessment"&gt;nPlan assessment&lt;a class="anchor-link" href="https://mariani.ai/posts/jupyer-try/#nPlan-assessment"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Davide Mariani&lt;/p&gt;

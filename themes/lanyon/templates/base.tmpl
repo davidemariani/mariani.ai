@@ -38,17 +38,15 @@ ${template_hooks['extra_head']()}
       <div class="masthead">
         <div class="container">
 
-          % if logo_url:
+         % if show_blog_title:
+             <span id="blog-title" style="display:inline-block;">${header.html_site_title()}</span>
+         % endif 
+
+         % if logo_url:
             <div class="logo">
-              <span style="text-align:center;"">
-                <img src=${logo_url} alt="mariani.ai logo" width="200" height= auto />
-              </span>
+                <img class="myLogo" src="/images/mariani-ai-logo-name-purple.png" alt="mariani.ai logo" />
             </div>
           % endif
-
-         % if show_blog_title:
-             <span id="blog-title">${header.html_site_title()}</span>
-         % endif
         </div>
       </div>
 

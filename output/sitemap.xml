@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://mariani.ai/archive.html</loc>
-  <lastmod>2021-12-06T19:29:00Z</lastmod>
+  <lastmod>2021-12-07T23:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/authors/</loc>
@@ -75,7 +75,7 @@
  </url>
  <url>
   <loc>https://mariani.ai/listings/hello.py.html</loc>
-  <lastmod>2021-12-06T19:29:00Z</lastmod>
+  <lastmod>2021-12-07T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/pages/about-nikola/</loc>
@@ -140,6 +140,10 @@
  <url>
   <loc>https://mariani.ai/pages/theming/</loc>
   <lastmod>2021-12-05T11:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariani.ai/posts/an-intro-to-graph-neural-networks/</loc>
+  <lastmod>2021-12-07T23:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/posts/jupyer-try/</loc>

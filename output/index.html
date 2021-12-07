@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="description" content="Welcome to my blog! Here I share my views on Machine Learning, Deep Learning and AI.">
 <meta name="viewport" content="width=device-width">
-<title>Davide Mariani's Homepage | Davide Mariani's Homepage</title>
+<title>Davide Mariani's personal blog | Davide Mariani's personal blog</title>
 <link href="assets/css/all.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://mariani.ai/">
 <link rel="icon" href="images/mariani-ai-favicon.png" sizes="16x16">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/jupyer-try/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/an-intro-to-graph-neural-networks/" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -41,11 +41,10 @@
       <div class="masthead">
         <div class="container">
 
-            <div class="logo">
-              <span style="text-align:center;">
-                <img src="images/mariani-ai-logo-name.png" alt="mariani.ai logo" width="200" height="auto"></span>
-            </div>
 
+            <div class="logo">
+                <img class="myLogo" src="images/mariani-ai-logo-name-purple.png" alt="mariani.ai logo">
+</div>
         </div>
       </div>
 
@@ -53,7 +52,70 @@
         
 
 <div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/jupyer-try/" class="u-url">jupyer try</a></h1>
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/an-intro-to-graph-neural-networks/" class="u-url">An intro to Graph Neural Networks</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Davide Mariani</span></p>
+            <p class="dateline" style="display:inline;"><a href="posts/an-intro-to-graph-neural-networks/" rel="bookmark"><time class="post-date published dt-published" datetime="2021-12-07T23:41:11+00:00" title="7 Dec, 2021">7 Dec, 2021</time></a></p>
+            
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Geometric Deep Learning</em> has seen an impressive increase in popularity over the past few years, and since pretty much everything can be modelled as a graph, I have been more and more curious about it.<br>
+In this post, I will try to compress the main intuitions (at a very high level) behind <em>Graph neural networks</em>, so that it will be easier to get to more detailed aspects in the future posts.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-is-a-graph?">What is a graph?<a class="anchor-link" href="posts/an-intro-to-graph-neural-networks/#What-is-a-graph?">¶</a>
+</h3>
+<p>A graph is a data structure made of <em>nodes (or vertices)</em> connected by <em>edges (or links)</em>; to simplify, we can say that edges represent the relationships between nodes.<br>
+Depending on the way the edges link the nodes, we can distinguish between <em>directed graphs</em> (in which direction matters and is specified at each edge) and <em>undirected graphs</em> (in which edges have no specified direction and can be traversed how we desire).</p>
+<div>
+        <img src="images/undirected_directed_graph.png" alt="Drawing" width="300" style="float: right;"><img src="images/complete_acyclic_graph.png" alt="Drawing" width="300" style="float: right;">
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are many examples of information that can be represented through graphs:</p>
+<ul>
+<li>chemical molecular structures or interactions between proteins (like the <a href="https://paperswithcode.com/dataset/ppi">PPI</a> dataset)</li>
+<li>document citation networks (like the <a href="https://relational.fit.cvut.cz/dataset/CORA">CORA</a> dataset)</li>
+<li>social media networks</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/jupyer-try/" class="u-url">jupyer try</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">Davide Mariani</span></p>
             <p class="dateline" style="display:inline;"><a href="posts/jupyer-try/" rel="bookmark"><time class="post-date published dt-published" datetime="2021-12-05T00:00:00+00:00" title="5 Dec, 2021">5 Dec, 2021</time></a></p>
