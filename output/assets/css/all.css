@@ -1311,3 +1311,8 @@ a.pagination-item:hover {
   margin-right: auto;
 }
 
+/* hide reversed P of paragraph mark etc */
+a.anchor-link {
+  text-decoration: none;
+  visibility: hidden;
+}
