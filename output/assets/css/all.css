@@ -208,6 +208,7 @@ strong {
 ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-size: 0.8rem;
 }
 
 dt {
@@ -581,9 +582,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -.025rem;
 }
 
-p {
+p, ul, ol {
   font-family: Helvetica;
+  color: #313131;
 }
+
+  
+
+
 
 
 /*

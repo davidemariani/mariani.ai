@@ -51,9 +51,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -.025rem;
 }
 
-p {
+p, ul, ol {
   font-family: Helvetica;
+  color: #313131;
 }
+
+  
+
+
 
 
 /*
