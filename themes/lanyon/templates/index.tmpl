@@ -18,8 +18,12 @@
     <header>
         <h1 class="post-title p-name"><a href="${post.permalink()}" class="u-url">${post.title()|h}</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">${post.author()}</span></p>
-            <p class="dateline" style="display:inline;"><a href="${post.permalink()}" rel="bookmark"><time class="post-date published dt-published" datetime="${post.date.isoformat()}" title="${post.formatted_date(date_format)}">${post.formatted_date(date_format)}</time></a></p>
+            <p class="byline author vcard" style="display:inline"><a href="/pages/about/">${post.author()}</a></p> <!-- <span class="byline-name fn" style="display:inline">${post.author()}</span></p> -->
+            <p class="dateline">
+                <a href="${post.permalink()}" rel="bookmark">
+                <time class="post-date published dt-published" style="display:inline" datetime="${post.date.isoformat()}" title="${post.formatted_date(date_format)}">${post.formatted_date(date_format)}</time>
+            </a>
+        </p>
             
         </div>
     </header>
