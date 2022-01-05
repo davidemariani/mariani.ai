@@ -787,7 +787,7 @@ GITHUB_COMMIT_SOURCE = True
 
 # Use a thumbnail (defined by ".. previewimage:" in the gallery's index) in
 # list of galleries for each gallery
-GALLERIES_USE_THUMBNAIL = False
+GALLERIES_USE_THUMBNAIL = True
 
 # Image to use as thumbnail for those galleries that don't have one
 # None: show a grey square

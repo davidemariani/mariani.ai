@@ -7,31 +7,31 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://mariani.ai/</loc>
-  <lastmod>2021-12-10T23:19:00Z</lastmod>
+  <lastmod>2022-01-03T16:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/2012/</loc>
   <lastmod>2021-12-05T11:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://mariani.ai/2021/</loc>
-  <lastmod>2021-12-10T23:19:00Z</lastmod>
+  <loc>https://mariani.ai/2022/</loc>
+  <lastmod>2022-01-03T16:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/archive.html</loc>
-  <lastmod>2021-12-24T11:12:00Z</lastmod>
+  <lastmod>2022-01-05T11:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/authors/</loc>
-  <lastmod>2021-12-10T23:19:00Z</lastmod>
+  <lastmod>2022-01-03T16:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/authors/davide-mariani/</loc>
-  <lastmod>2021-12-10T23:19:00Z</lastmod>
+  <lastmod>2022-01-03T16:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/authors/roberto-alsina/</loc>
-  <lastmod>2021-12-10T23:19:00Z</lastmod>
+  <lastmod>2022-01-03T16:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/categories/</loc>
@@ -75,7 +75,7 @@
  </url>
  <url>
   <loc>https://mariani.ai/listings/hello.py.html</loc>
-  <lastmod>2021-12-24T11:12:00Z</lastmod>
+  <lastmod>2022-01-05T11:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/pages/about-nikola/</loc>
@@ -87,7 +87,7 @@
  </url>
  <url>
   <loc>https://mariani.ai/pages/about/index.src.html</loc>
-  <lastmod>2021-12-05T18:59:00Z</lastmod>
+  <lastmod>2022-01-05T11:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/pages/bootstrap-demo/</loc>
@@ -142,8 +142,8 @@
   <lastmod>2021-12-05T11:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://mariani.ai/posts/an-introduction-to-graph-neural-networks/</loc>
-  <lastmod>2021-12-10T23:19:00Z</lastmod>
+  <loc>https://mariani.ai/posts/a-quick-introduction-to-graph-neural-networks/</loc>
+  <lastmod>2022-01-03T16:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/posts/welcome-to-nikola/</loc>
