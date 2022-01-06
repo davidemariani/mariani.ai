@@ -11,10 +11,11 @@ In this post, I will try to compress the main intuitions (at a very high level) 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Table-of-contents:">Table of contents:<a class="anchor-link" href="#Table-of-contents:">&#182;</a></h3><ol>
+<h3><strong>Table of contents:</strong></h3><ol>
 <li><a href="#what-is-a-graph">What is a graph?</a></li>
 <li><a href="#information-level">Node, edge and graph level information</a></li>
-<li><a href="#modelling-examples">Information represented through graphs</a></li>
+<li><a href="#modelling-examples">Graphs applications</a></li>
+<li><a href="#references">References</a></li>
 </ol>
 
 </div>
@@ -23,13 +24,21 @@ In this post, I will try to compress the main intuitions (at a very high level) 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>What is a graph? <a class="anchor" id="what-is-a-graph"></h2>
+<p><h2><strong>What is a graph?</strong></h2> <a class="anchor" id="what-is-a-graph"></a></p>
 <p>A graph is a data structure made of <em>nodes (or vertices)</em> connected by <em>edges (or links)</em>; we can simply say that edges represent the relationships between nodes.<br>
-Depending on the way the edges link the nodes, we can classify graphs as <a href="https://en.wikipedia.org/wiki/Directed_graph"><em>directed</em></a> (edges direction matters and is specified at each edge) and <a href="https://www.cpp.edu/~ftang/courses/CS241/notes/graph.htm"><em>undirected</em></a> (edges have no specified direction and can be traversed how we desire). 
-Connectivity is another way to do network classification: for example, a graph in which all the nodes are connected to all the others is called <a href="https://en.wikipedia.org/wiki/Complete_graph"><em>complete</em></a>, while a graph without any directed cylces is categorized as <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph"><em>directed acyclic</em></a>.</p>
-<div>
-        <img src="/images/undirected_directed_graph.png" alt="Drawing" width=300 style="float: right;"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="/images/complete_acyclic_graph.png" alt="Drawing" width=300/>
+Depending on the way the edges link the nodes, we can classify graphs as <a href="https://en.wikipedia.org/wiki/Directed_graph"><em>directed</em></a> (edges direction matters and is specified at each edge) and <a href="https://www.cpp.edu/~ftang/courses/CS241/notes/graph.htm"><em>undirected</em></a> (edges have no specified direction and can be traversed how we desire).</p>
+<div align="center">
+    <img src="/images/undirected_directed_graph.png" alt="Drawing" width="300"/>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Connectivity is another way to do network classification: for example, a graph in which all the nodes are connected to all the others is called <a href="https://en.wikipedia.org/wiki/Complete_graph"><em>complete</em></a>, while a graph without any directed cylces is categorized as <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph"><em>directed acyclic</em></a>.</p>
+<div align="center">
+    <img src="/images/complete_acyclic_graph.png" alt="Drawing" width=300/>
 </div>
 </div>
 </div>
@@ -47,15 +56,16 @@ Connectivity is another way to do network classification: for example, a graph i
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Node,-edge-and-graph-level-information-">Node, edge and graph level information <a class="anchor" id="information-level" /><a class="anchor-link" href="#Node,-edge-and-graph-level-information-">&#182;</a></h2><p><img align='left' src="/images/embedding.png" alt="Drawing" width=400/></p>
+<p><h2><strong>Node, edge and graph level information</strong></h2> <a class="anchor" id="information-level"></a><br>
+<img align='left' src="/images/embedding.png" alt="Drawing" width=400/></p>
 <p>Each piece of the graph carries a different information level:</p>
 <ul>
-<li><strong>node information level</strong>, with attributes such as number of neighbours or node class </li>
-<li><strong>edge information level</strong>, with directions and attributes like edge weight or edge class</li>
-<li><strong>graph information level</strong>, with global attributes like number of nodes or shortest paths</li>
+<li><strong>node</strong>, with attributes such as number of neighbours or node class </li>
+<li><strong>edge</strong>, with directions and attributes like edge weight or edge class</li>
+<li><strong>graph information</strong>, with global attributes like number of nodes or shortest paths</li>
 </ul>
 <p>Furthermore, each element can be seen as a place in which we can store information, creating different types of <a href="https://developers.google.com/machine-learning/crash-course/embeddings/video-lecture#:~:text=An%20embedding%20is%20a%20relatively,can%20translate%20high%2Ddimensional%20vectors.&amp;text=Ideally%2C%20an%20embedding%20captures%20some,learned%20and%20reused%20across%20models.">embedding</a>.<br>
-This is particularly important in the <em>deep learning</em> domain, since embedding can be learned and treated as weights to train.</p>
+This is particularly important in the <em>deep learning</em> domain, since embeddings can be learned and treated similarly to weights to train.</p>
 
 </div>
 </div>
@@ -63,20 +73,26 @@ This is particularly important in the <em>deep learning</em> domain, since embed
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Information-represented-through-graphs-">Information represented through graphs <a class="anchor" id="modelling-examples" /><a class="anchor-link" href="#Information-represented-through-graphs-">&#182;</a></h3><p>As stated in the magnificent article <a href="https://distill.pub/2021/gnn-intro/#graph-to-tensor"><em>A gentle introduction to Graph Neural Networks</em></a> (from which I have taken most of the inspiration from this post), <strong>"graphs are all around us"</strong>, and the followings are just a few examples of what can be represented using them:</p>
+<p><h2><strong>Graphs applications</strong></h2> <a class="anchor" id="modelling-examples"></a></p>
+<p>As stated in the magnificent article <a href="https://distill.pub/2021/gnn-intro/#graph-to-tensor"><em>A gentle introduction to Graph Neural Networks</em></a><a href="#fn1"><sup>1</sup></a> (from which I have taken most of the inspiration for this post), <em>"graphs are all around us"</em>, and the followings are just a few examples of what can be represented using them:</p>
 <ul>
-<li><strong>images</strong>: </li>
-<li><strong>text</strong></li>
-<li><strong>social media networks</strong> (greatly summarised in <a href="https://brilliant.org/wiki/social-networks/">this article</a>)</li>
+<li><strong>interactions</strong> (like <a href="https://brilliant.org/wiki/social-networks/">social media networks</a>, <a href="https://wits.worldbank.org/CountryNetwork.aspx?lang=en">trade networks</a> or document citation networks. The <a href="https://relational.fit.cvut.cz/dataset/CORA">CORA</a> dataset is a good example of the latter)</li>
+<li><strong>fraud detection systems</strong> (<a href="https://blog.careem.com/en/crazywall-graph-based-identity-fraud-detection/">here</a> a graph based identity fraud detection is described)</li>
 <li><strong>chemical molecular structures</strong> or interactions between proteins (like the <a href="https://paperswithcode.com/dataset/ppi">PPI</a> dataset)</li>
-<li><strong>document citation networks</strong> (like the <a href="https://relational.fit.cvut.cz/dataset/CORA">CORA</a> dataset)</li>
 <li><strong>recommender systems</strong> (here's <a href="https://arxiv.org/pdf/2105.06339.pdf">a review of graph learning based recommender systems</a>)</li>
 <li><strong>manifolds</strong> (an application of geometric deep learning on manifold is shown in <a href="https://www.youtube.com/watch?v=-b0e41H4J_A">this short video</a>)</li>
-<li><strong>trade networks</strong> (as shown in <a href="https://wits.worldbank.org/CountryNetwork.aspx?lang=en">this nice interactive visualization</a>)</li>
-<li><strong>fraud detection systems</strong> (<a href="https://blog.careem.com/en/crazywall-graph-based-identity-fraud-detection/">here</a> a graph based identity fraud detection is described)</li>
 </ul>
-<p>As you can see, graph are all around us.</p>
+<p>Even <strong>images</strong> and <strong>text</strong> can be represented using a graph!<br>
+An image is a grap</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><h2><strong>References</strong></h2> <a class="anchor" id="references"></a></p>
+<p id="fn1">[1] Sanchez-Lengeling, et al., "A Gentle Introduction to Graph Neural Networks", Distill, 2021.</p>
 </div>
 </div>
 </div>
