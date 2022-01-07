@@ -16,8 +16,6 @@ In this post, I will try to compress the main intuitions (at a very high level) 
 <li><a href="#information-level">Node, edge and graph level information</a></li>
 <li><a href="#modelling-examples">Graphs applications</a></li>
 <li><a href="#GML-tasks">Graph Machine Learning Tasks and Challenges</a></li>
-<li><a href="#computation-graphs">Computation Graphs, Message Passing and Aggregation</a></li>
-<li><a href="#transductive-inductive">Transductive and inductive setting</a></li>
 <li><a href="#references">References</a></li>
 </ol>
 
@@ -50,10 +48,9 @@ Depending on the way the edges link the nodes, we can classify graphs as <a href
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are many different graph classifications but the important thing to bear in mind is that a graph can commonly be described by its connectivity information with an <a href="https://en.wikipedia.org/wiki/Adjacency_matrix#:~:text=In%20graph%20theory%20and%20computer,or%20not%20in%20the%20graph.&amp;text=If%20the%20graph%20is%20undirected,the%20adjacency%20matrix%20is%20symmetric."><em>adjacency matrix</em></a>, that simply stores a "1" if two nodes are connected (like node "a" and node "c" in the image below) or a "0" if they are not. 
-<br></p>
-<div align="center">
-    <img src="/images/adjacency_matrix.png" alt="Drawing" width=400/> 
-</div>
+<br>
+<img src="/images/adjacency_matrix.png" alt="Drawing" width=400/></p>
+
 </div>
 </div>
 </div>
@@ -103,69 +100,21 @@ A node representing a non-border pixel (like the central one in the image below)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h2><strong>Graph Machine Learning: Tasks and Challenges</strong></h2> <a class="anchor" id="GML-tasks"></a></p>
-<p>The types of prediction that we can do when working on a graph happen at the usual three main levels:</p>
+<p><h2><strong>Graph Machine Learning Tasks and Challenges</strong></h2> <a class="anchor" id="GML-tasks"></a>
+The types of prediction that we can do when working on a graph happen at the usual three main levels:</p>
 <ul>
 <li><strong>Graph level</strong> predictions (where we try to predict a property of the entire graph, and the label is assigned to the entire graph itself)</li>
 <li><strong>Node level</strong> predictions (where we want to predict the role or identity of a node. A typical example is the <a href="https://en.wikipedia.org/wiki/Zachary%27s_karate_club">Zachary's Karate Club</a>)</li>
 <li><strong>Edge level</strong> predictions (where we make predictions on the relationships between the graph's nodes)  </li>
 </ul>
 <p>The first step to take when facing one of the above problems is to find the correct way to represent the data and make them understandable for the model we are using.<br>
-In my experience, a traditional approach was just to use the graph modelling as a "feature extractor" for traditional machine learning models, adding predictors coming from network topology or interactions simulations.</p>
-<p>Anyway, to fully leverage the graph machine learning potentials, it is necessary to represent them in a way that is compatible with neural networks so that the graph structure itself becomes a source of information for the model. The neural network architecture that is able to do that is the Graph Neural Network.<br>
-Machine Learning models are typically fed with regular arrays as input, so it is not trivial to find a way to represent a graph (with all the information levels mentioned above and the consequent interactions) for their training.<br>
-The adjacency matrix could be used, but it presents few problems (very well explained in <a href="https://youtu.be/JtDgmmQ60x8?t=411">this video</a> from the <a href="https://antoniolonga.github.io/Pytorch_geometric_tutorials/index.html">Pytorch Geometric Tutorial project</a><a href="#fn2"><sup>2</sup></a>):</p>
+In my experience, a traditional approach was just to use the graph modelling as a "feature extractor" for traditional machine learning models, adding predictors coming from network topology or interactions simulations to the existing ones.<br>
+Anyway, to fully leverage the graph machine learning potentials, it is necessary to represent them in a way that is compatible with neural networks.<br>
+Machine Learning models are typically fed with regular arrays as input, so it is not trivial to find a way to represent a graph (with all the information levels mentioned above and the consequent interactions) for them.<br>
+Using the adjacency matrix for it presents few problems, which are very well explained in <a href="https://youtu.be/JtDgmmQ60x8?t=411">this video</a> from the <a href="https://antoniolonga.github.io/Pytorch_geometric_tutorials/index.html">Pytorch Geometric Tutorial project</a><a href="#fn2"><sup>2</sup></a>:</p>
 <ul>
-<li><strong>sparsity</strong> and consequent space inefficiency</li>
-<li>it depends on nodes ordering and <strong>it is not permutation invariant</strong>, which means that many adjacency matrices can encode the same connectivity but obviously they would produce different results after being passed through a neural network</li>
-<li>it does not handle a <strong>graph change</strong> in size: if a new node appears on the graph, the previously trained model becomes useless since it can not handle the new shape  </li>
+<li>sparsity</li>
 </ul>
-<p>This is why other steps like <em>message passing</em> and <em>aggregation</em> are taken to train Graph Neural Networks.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><h2><strong>Computation Graphs, Message Passing and Aggregation</strong></h2> <a class="anchor" id="computation-graphs"></a></p>
-<p>The main intuition behind Graph Neural Networks is that they manage to learn structural information about the graphs, based on the assumptions that neighboring nodes (nodes that are connected by an edge) share similar properties; therefore, <strong>the computation graph of a node is indeed defined by its neighbors, and every node has its own computation graph</strong> as shown in the example below.</p>
-<div align="center">
-    <img src="/images/computation_graph.png" alt="Drawing" width=600/> 
-</div><p>The image shows what a Graph Neural Network with 3 different layers does to a single node.<br>
-Each layer can be seen as a progressive degree of distance from the target node:</p>
-<ul>
-<li>Layer 0 contains the node features of the most distant neighbors (in this case neighbors at degree 2)</li>
-<li>Layer 1 which is a sort of hidden layer that passes the aggregated information to node F (degree 1 distance)</li>
-<li>Layer 2 which in this case is the final layer that returns the representation of node A</li>
-</ul>
-<p>From the image, we can see that both Layer 0 and Layer 1 include a neural network (usually a simple <a href="https://en.wikipedia.org/wiki/Multilayer_perceptron">Multi-layer perceptron</a> or a <a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">Recurrent Neural Network</a>) executing the function $F(x_j) = \mathbf{W}_j \cdot x_j + b$.<br>
-In the article <a href="https://rish16.notion.site/Graph-Neural-Networks-for-Novice-Math-Fanatics-c51b922a595b4efd8647788475461d57"><em>Graph Neural Networks for Novice Math Fanatics</em></a><a href="#fn3"><sup>3</sup></a>, <strong>message passing for a Graph Neural Network layer</strong> is defined as:</p>
-<blockquote><p><strong>the process of taking node features of the neighbours, transforming them, and "passing" them to the source node. This process is repeated, in parallel, for all nodes in the graph. In that way, all neighbourhoods are examined by the end of this step.</strong></p>
-</blockquote>
-<p>Every layer terminates with an <strong>aggregation step</strong> that allows to perform an invariant operation (it does not depend on the nodes order) like <em>sum</em>, <em>average</em>, <em>min</em> or <em>max</em> before "passing the message".<br>
-When getting the target node, the aggregated messages are combined with the node's features, so that the embedded representation of the node containes the information coming from both the node's neighbors and the node itself with a simple addition or a concatenation.<br>
-For example, using addition and summarising the whole process to obtain the new representation $h_i$ of node $i$ with a formula:</p>
-$$\large h_i = \sigma(K(H(x_i) + \bar{m}_i)))$$<p></p>
-<p>where:</p>
-<ul>
-<li>$x_i$ represents the features at node $i$, that will be combined with the aggregated messages</li>
-<li>$m_i$ is the message aggregation
--$H$ is the simple neural network mentioned before and applied on the node features</li>
-<li>$K$ is another neural network used to project to another dimension both the node features and the aggregated messages (that in this case are summed together)</li>
-<li>$\sigma$ is an activation function like <a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks"><em>Relu</em></a>) or <a href="https://paperswithcode.com/method/leaky-relu#:~:text=Leaky%20Rectified%20Linear%20Unit%2C%20or,instead%20of%20a%20flat%20slope.&amp;text=learnt%20during%20training.-,This%20type%20of%20activation%20function%20is%20popular%20in%20tasks%20where,example%20training%20generative%20adversarial%20networks."><em>Leaky Relu</em></a></li>
-</ul>
-<p>To conclude, a single Graph Neural Network layer applied on a single node $i$ and using addition, can be formulated as:</p>
-$$\large h_i = \sigma(W_1\cdot h_i + \sum_{j \in \mathcal{N}_i}\mathbf{W}_2\cdot h_j )$$<p>since it applies an activation on the sum of the features of $i$ multiplied by the weights at layer 1 ($W_1$) and the features of the neighbors $j$ multiplied by the weights at layer 2 ($W_2$).<br>
-The whole process obviously increases in complexity when given a full adjacency matrix, which is used when training the model.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><h2><strong>Transductive and inductive setting</strong></h2> <a class="anchor" id="computation-graphs"></a></p>
 
 </div>
 </div>
@@ -174,9 +123,8 @@ The whole process obviously increases in complexity when given a full adjacency 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h2><strong>References</strong></h2> <a class="anchor" id="references"></a></p>
-<p id="fn1">[1] Sanchez-Lengeling, et al., <a href="https://distill.pub/2021/gnn-intro/">A Gentle Introduction to Graph Neural Networks</a>, Distill, 2021.</p>
+<p id="fn1">[1] Sanchez-Lengeling, et al., "A Gentle Introduction to Graph Neural Networks", Distill, 2021.</p>
 <p id="fn2">[2] Longa A., Santin G., Pellegrini G., <a href="https://antoniolonga.github.io/Pytorch_geometric_tutorials/index.html">Pytorch Geometric Tutorial</a>, 2021.</p>
-<p id="fn3">[3] Anand R., <a href="https://rish16.notion.site/Graph-Neural-Networks-for-Novice-Math-Fanatics-c51b922a595b4efd8647788475461d57">Graph Neural Networks for Novice Math Fanatics</a>, 2021.</p>
 </div>
 </div>
 </div>

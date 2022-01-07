@@ -7,55 +7,19 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://mariani.ai/</loc>
-  <lastmod>2022-01-06T14:15:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/2012/</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2022-01-07T18:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/2022/</loc>
-  <lastmod>2022-01-06T14:15:00Z</lastmod>
+  <lastmod>2022-01-07T18:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/archive.html</loc>
-  <lastmod>2022-01-06T09:48:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/authors/</loc>
-  <lastmod>2022-01-06T14:15:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/authors/davide-mariani/</loc>
-  <lastmod>2022-01-06T14:15:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/authors/roberto-alsina/</loc>
-  <lastmod>2022-01-06T14:15:00Z</lastmod>
+  <lastmod>2022-01-07T18:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/categories/</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/categories/blog/</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/categories/cat_nikola/</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/categories/demo/</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/categories/nikola/</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/categories/python/</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2022-01-07T13:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/galleries/</loc>
@@ -75,7 +39,7 @@
  </url>
  <url>
   <loc>https://mariani.ai/listings/hello.py.html</loc>
-  <lastmod>2022-01-06T09:48:00Z</lastmod>
+  <lastmod>2022-01-07T18:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/pages/about-nikola/</loc>
@@ -143,10 +107,6 @@
  </url>
  <url>
   <loc>https://mariani.ai/posts/a-quick-introduction-to-graph-neural-networks/</loc>
-  <lastmod>2022-01-06T14:15:00Z</lastmod>
- </url>
- <url>
-  <loc>https://mariani.ai/posts/welcome-to-nikola/</loc>
-  <lastmod>2021-12-05T11:28:00Z</lastmod>
+  <lastmod>2022-01-07T18:37:00Z</lastmod>
  </url>
 </urlset>

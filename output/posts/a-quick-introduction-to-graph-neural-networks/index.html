@@ -10,14 +10,14 @@
 <link rel="canonical" href="https://mariani.ai/posts/a-quick-introduction-to-graph-neural-networks/">
 <link rel="icon" href="../../images/mariani-ai-favicon.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Davide Mariani">
-<link rel="prev" href="../welcome-to-nikola/" title="Welcome to Nikola" type="text/html">
 <meta property="og:site_name" content="Davide Mariani's personal blog">
 <meta property="og:title" content="A quick introduction to Graph Neural Networks">
 <meta property="og:url" content="https://mariani.ai/posts/a-quick-introduction-to-graph-neural-networks/">
-<meta property="og:description" content="Geometric Deep Learning has become increasingly popular over the past few years, and I have recently become more and more interested in them.
-In this post, I will try to compress the main intuitions (">
+<meta property="og:description" content="Geometric Deep Learning has become increasingly popular over the past few years, and my curiosity about it has been growing significantly in the past few months.
+In this post, I will try to compress t">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2022-01-06T14:15:51Z">
+<meta property="article:published_time" content="2022-01-07T18:37:42Z">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -73,7 +73,7 @@ In this post, I will try to compress the main intuitions (">
             <p class="byline author vcard" style="display:inline"><a href="../../pages/about/">Davide Mariani</a></p> <!-- <span class="byline-name fn" style="display:inline">Davide Mariani</span></p> -->
             <p class="dateline">
                 <a href="." rel="bookmark">
-                <time class="post-date published dt-published" style="display:inline" datetime="2022-01-06T14:15:51+00:00" title="6 Jan, 2022">6 Jan, 2022</time></a>
+                <time class="post-date published dt-published" style="display:inline" datetime="2022-01-07T18:37:42+00:00" title="7 Jan, 2022">7 Jan, 2022</time></a>
         </p>
             
         </div>
@@ -86,7 +86,7 @@ In this post, I will try to compress the main intuitions (">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Geometric Deep Learning</em> <a href="https://twitter.com/prlz77/status/1178662575900368903">has become increasingly popular over the past few years</a>, and I have recently become more and more interested in them.<br>
+<p><em>Geometric Deep Learning</em> <a href="https://twitter.com/prlz77/status/1178662575900368903">has become increasingly popular over the past few years</a>, and my curiosity about it has been growing significantly in the past few months.<br>
 In this post, I will try to compress the main intuitions (at a very high level) behind <em>Graph neural networks</em>, so that it will be easier to get to more detailed aspects in the future posts.
 <!-- TEASER_END --></p>
 
@@ -103,6 +103,9 @@ In this post, I will try to compress the main intuitions (at a very high level) 
 <li><a href="#what-is-a-graph">What is a graph?</a></li>
 <li><a href="#information-level">Node, edge and graph level information</a></li>
 <li><a href="#modelling-examples">Graphs applications</a></li>
+<li><a href="#GML-tasks">Graph Machine Learning Tasks and Challenges</a></li>
+<li><a href="#computation-graphs">Computation Graphs, Message Passing and Aggregation</a></li>
+<li><a href="#transductive-inductive">Transductive and inductive setting</a></li>
 <li><a href="#references">References</a></li>
 </ol>
 </div>
@@ -141,8 +144,10 @@ Depending on the way the edges link the nodes, we can classify graphs as <a href
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are many different graph classifications but the important thing to bear in mind is that a graph can commonly be described by its connectivity information with an <a href="https://en.wikipedia.org/wiki/Adjacency_matrix#:~:text=In%20graph%20theory%20and%20computer,or%20not%20in%20the%20graph.&amp;text=If%20the%20graph%20is%20undirected,the%20adjacency%20matrix%20is%20symmetric."><em>adjacency matrix</em></a>, that simply stores a "1" if two nodes are connected (like node "a" and node "c" in the image below) or a "0" if they are not. 
-<br><img src="../../images/adjacency_matrix.png" alt="Drawing" width="400/"></p>
-
+<br></p>
+<div align="center">
+    <img src="../../images/adjacency_matrix.png" alt="Drawing" width="400/">
+</div>
 </div>
 </div>
 </div>
@@ -188,7 +193,102 @@ This is particularly important in the <em>deep learning</em> domain, since embed
 <strong>manifolds</strong> (an application of geometric deep learning on manifold is shown in <a href="https://www.youtube.com/watch?v=-b0e41H4J_A">this short video</a>)</li>
 </ul>
 <p>Even <strong>images</strong> and <strong>text</strong> can be represented using a graph!<br>
-An image is a grap</p>
+An image is a graph in which each node represents a pixel, and each edge shows the connection between that pixel and the adjacent ones.<br>
+A node representing a non-border pixel (like the central one in the image below) always has 8 linked nodes, and the vector stored within the node has 3 dimensions representing the RGB channel.</p>
+<div>
+    <img src="../../images/image_to_graph.png" alt="Drawing" width="400/">
+</div>
+<p>When dealing with text, <a href="https://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html">tokenization</a> is one of the fundamental pre-processing steps, so that we can use characters, words and similar as separate elements of a sequence. Each of these elements can potentially be modelled as a node of a graph.</p>
+<p></p>
+<div>
+    <img src="../../images/text_to_graph.png" alt="Drawing" width="400/">
+</div>
+<br>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<h3><strong>Graph Machine Learning: Tasks and Challenges</strong></h3> <a class="anchor" id="GML-tasks"></a>
+<p>The types of prediction that we can do when working on a graph happen at the usual three main levels:</p>
+<ul>
+<li>
+<strong>Graph level</strong> predictions (where we try to predict a property of the entire graph, and the label is assigned to the entire graph itself)</li>
+<li>
+<strong>Node level</strong> predictions (where we want to predict the role or identity of a node. A typical example is the <a href="https://en.wikipedia.org/wiki/Zachary%27s_karate_club">Zachary's Karate Club</a>)</li>
+<li>
+<strong>Edge level</strong> predictions (where we make predictions on the relationships between the graph's nodes)  </li>
+</ul>
+<p>The first step to take when facing one of the above problems is to find the correct way to represent the data and make them understandable for the model we are using.<br>
+In my experience, a traditional approach was just to use the graph modelling as a "feature extractor" for traditional machine learning models, adding predictors coming from network topology or interactions simulations.</p>
+<p>Anyway, to fully leverage the graph machine learning potentials, it is necessary to represent them in a way that is compatible with neural networks so that the graph structure itself becomes a source of information for the model. The neural network architecture that is able to do that is the Graph Neural Network.<br>
+Machine Learning models are typically fed with regular arrays as input, so it is not trivial to find a way to represent a graph (with all the information levels mentioned above and the consequent interactions) for their training.<br>
+The adjacency matrix could be used, but it presents few problems (very well explained in <a href="https://youtu.be/JtDgmmQ60x8?t=411">this video</a> from the <a href="https://antoniolonga.github.io/Pytorch_geometric_tutorials/index.html">Pytorch Geometric Tutorial project</a><a href="#fn2"><sup>2</sup></a>):</p>
+<ul>
+<li>
+<strong>sparsity</strong> and consequent space inefficiency</li>
+<li>it depends on nodes ordering and <strong>it is not permutation invariant</strong>, which means that many adjacency matrices can encode the same connectivity but obviously they would produce different results after being passed through a neural network</li>
+<li>it does not handle a <strong>graph change</strong> in size: if a new node appears on the graph, the previously trained model becomes useless since it can not handle the new shape  </li>
+</ul>
+<p>This is why other steps like <em>message passing</em> and <em>aggregation</em> are taken to train Graph Neural Networks.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<h3><strong>Computation Graphs, Message Passing and Aggregation</strong></h3> <a class="anchor" id="computation-graphs"></a>
+<p>The main intuition behind Graph Neural Networks is that they manage to learn structural information about the graphs, based on the assumptions that neighboring nodes (nodes that are connected by an edge) share similar properties; therefore, <strong>the computation graph of a node is indeed defined by its neighbors, and every node has its own computation graph</strong> as shown in the example below.</p>
+<div align="center">
+    <img src="../../images/computation_graph.png" alt="Drawing" width="600/">
+</div>
+<p>The image shows what a Graph Neural Network with 3 different layers does to a single node.<br>
+Each layer can be seen as a progressive degree of distance from the target node:</p>
+<ul>
+<li>Layer 0 contains the node features of the most distant neighbors (in this case neighbors at degree 2)</li>
+<li>Layer 1 which is a sort of hidden layer that passes the aggregated information to node F (degree 1 distance)</li>
+<li>Layer 2 which in this case is the final layer that returns the representation of node A</li>
+</ul>
+<p>From the image, we can see that both Layer 0 and Layer 1 include a neural network (usually a simple <a href="https://en.wikipedia.org/wiki/Multilayer_perceptron">Multi-layer perceptron</a> or a <a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">Recurrent Neural Network</a>) executing the function $F(x_j) = \mathbf{W}_j \cdot x_j + b$.<br>
+In the article <a href="https://rish16.notion.site/Graph-Neural-Networks-for-Novice-Math-Fanatics-c51b922a595b4efd8647788475461d57"><em>Graph Neural Networks for Novice Math Fanatics</em></a><a href="#fn3"><sup>3</sup></a>, <strong>message passing for a Graph Neural Network layer</strong> is defined as:</p>
+<blockquote>
+<p><strong>the process of taking node features of the neighbours, transforming them, and "passing" them to the source node. This process is repeated, in parallel, for all nodes in the graph. In that way, all neighbourhoods are examined by the end of this step.</strong></p>
+</blockquote>
+<p>Every layer terminates with an <strong>aggregation step</strong> that allows to perform an invariant operation (it does not depend on the nodes order) like <em>sum</em>, <em>average</em>, <em>min</em> or <em>max</em> before "passing the message".<br>
+When getting the target node, the aggregated messages are combined with the node's features, so that the embedded representation of the node containes the information coming from both the node's neighbors and the node itself with a simple addition or a concatenation.<br>
+For example, using addition and summarising the whole process to obtain the new representation $h_i$ of node $i$ with a formula:</p>
+$$\large h_i = \sigma(K(H(x_i) + \bar{m}_i)))$$<p></p>
+<p>where:</p>
+<ul>
+<li>$x_i$ represents the features at node $i$, that will be combined with the aggregated messages</li>
+<li>$m_i$ is the message aggregation
+-$H$ is the simple neural network mentioned before and applied on the node features</li>
+<li>$K$ is another neural network used to project to another dimension both the node features and the aggregated messages (that in this case are summed together)</li>
+<li>$\sigma$ is an activation function like <a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks"><em>Relu</em></a>) or <a href="https://paperswithcode.com/method/leaky-relu#:~:text=Leaky%20Rectified%20Linear%20Unit%2C%20or,instead%20of%20a%20flat%20slope.&amp;text=learnt%20during%20training.-,This%20type%20of%20activation%20function%20is%20popular%20in%20tasks%20where,example%20training%20generative%20adversarial%20networks."><em>Leaky Relu</em></a>
+</li>
+</ul>
+<p>To conclude, a single Graph Neural Network layer applied on a single node $i$ and using addition, can be formulated as:</p>
+$$\large h_i = \sigma(W_1\cdot h_i + \sum_{j \in \mathcal{N}_i}\mathbf{W}_2\cdot h_j )$$<p>since it applies an activation on the sum of the features of $i$ multiplied by the weights at layer 1 ($W_1$) and the features of the neighbors $j$ multiplied by the weights at layer 2 ($W_2$).<br>
+The whole process obviously increases in complexity when given a full adjacency matrix, which is used when training the model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<h3><strong>Transductive and inductive setting</strong></h3> <a class="anchor" id="computation-graphs"></a>
 
 </div>
 </div>
@@ -200,7 +300,9 @@ An image is a grap</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
 <h3><strong>References</strong></h3> <a class="anchor" id="references"></a>
-<p id="fn1">[1] Sanchez-Lengeling, et al., "A Gentle Introduction to Graph Neural Networks", Distill, 2021.</p>
+<p id="fn1">[1] Sanchez-Lengeling, et al., <a href="https://distill.pub/2021/gnn-intro/">A Gentle Introduction to Graph Neural Networks</a>, Distill, 2021.</p>
+<p id="fn2">[2] Longa A., Santin G., Pellegrini G., <a href="https://antoniolonga.github.io/Pytorch_geometric_tutorials/index.html">Pytorch Geometric Tutorial</a>, 2021.</p>
+<p id="fn3">[3] Anand R., <a href="https://rish16.notion.site/Graph-Neural-Networks-for-Novice-Math-Fanatics-c51b922a595b4efd8647788475461d57">Graph Neural Networks for Novice Math Fanatics</a>, 2021.</p>
 </div>
 </div>
 </div>
@@ -219,11 +321,7 @@ An image is a grap</p>
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
-<li class="previous">
-                <a href="../welcome-to-nikola/" rel="prev" title="Welcome to Nikola">Previous post</a>
-            </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+    <aside class="postpromonav"><nav></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
         
         <div id="disqus_thread"></div>
@@ -245,9 +343,21 @@ An image is a grap</p>
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script></article><script>var disqus_shortname="mariani-ai";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2022         <a href="mailto:davide@mariani.ai">Davide Mariani</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        </section><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script><script>
+                renderMathInElement(document.body,
+                    {
+                        
+delimiters: [
+    {left: "$$", right: "$$", display: true},
+    {left: "\\[", right: "\\]", display: true},
+    {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+    {left: "$", right: "$", display: false},
+    {left: "\\(", right: "\\)", display: false}
+]
+
+                    }
+                );
+            </script></article><script>var disqus_shortname="mariani-ai";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2022         <a href="mailto:davide@mariani.ai">Davide Mariani</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>

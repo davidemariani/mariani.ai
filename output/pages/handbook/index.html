@@ -36,6 +36,7 @@ Extra
 Meta">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-03-30T23:00:00-03:00">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -2800,9 +2801,21 @@ damage caused by the software. Read the <a class="reference external" href="http
     </div>
     
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script></article><footer id="footer"><p>Contents © 2022         <a href="mailto:davide@mariani.ai">Davide Mariani</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script><script>
+                renderMathInElement(document.body,
+                    {
+                        
+delimiters: [
+    {left: "$$", right: "$$", display: true},
+    {left: "\\[", right: "\\]", display: true},
+    {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+    {left: "$", right: "$", display: false},
+    {left: "\\(", right: "\\)", display: false}
+]
+
+                    }
+                );
+            </script></article><footer id="footer"><p>Contents © 2022         <a href="mailto:davide@mariani.ai">Davide Mariani</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
