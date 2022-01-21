@@ -6,19 +6,27 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://mariani.ai/categories/deep-learning.xml</loc>
+  <lastmod>2022-01-08T10:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariani.ai/categories/graph-neural-networks.xml</loc>
+  <lastmod>2022-01-08T10:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://mariani.ai/galleries/demo/rss.xml</loc>
-  <lastmod>2022-01-07T18:35:00Z</lastmod>
+  <lastmod>2022-01-21T10:31:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/galleries/rss.xml</loc>
-  <lastmod>2022-01-07T18:35:00Z</lastmod>
+  <lastmod>2022-01-21T10:31:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/rss.xml</loc>
-  <lastmod>2022-01-07T18:37:00Z</lastmod>
+  <lastmod>2022-01-08T10:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/sitemap.xml</loc>
-  <lastmod>2022-01-07T18:37:00Z</lastmod>
+  <lastmod>2022-01-21T10:31:00Z</lastmod>
  </sitemap>
 </sitemapindex>
