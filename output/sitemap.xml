@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://mariani.ai/archive.html</loc>
-  <lastmod>2022-01-21T10:31:00Z</lastmod>
+  <lastmod>2022-03-19T11:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/categories/</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://mariani.ai/listings/hello.py.html</loc>
-  <lastmod>2022-01-21T10:31:00Z</lastmod>
+  <lastmod>2022-01-21T12:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/pages/about-nikola/</loc>
@@ -59,7 +59,7 @@
  </url>
  <url>
   <loc>https://mariani.ai/pages/about/index.src.html</loc>
-  <lastmod>2022-01-21T10:29:00Z</lastmod>
+  <lastmod>2022-01-21T11:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/pages/bootstrap-demo/</loc>
@@ -116,5 +116,9 @@
  <url>
   <loc>https://mariani.ai/posts/a-quick-introduction-to-graph-neural-networks/</loc>
   <lastmod>2022-01-08T10:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariani.ai/posts/gat-on-ppi-dataset-using-spektral/</loc>
+  <lastmod>2022-03-19T11:48:00Z</lastmod>
  </url>
 </urlset>

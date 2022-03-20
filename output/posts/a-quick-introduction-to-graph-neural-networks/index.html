@@ -10,6 +10,7 @@
 <link rel="canonical" href="https://mariani.ai/posts/a-quick-introduction-to-graph-neural-networks/">
 <link rel="icon" href="../../images/mariani-ai-favicon.png" sizes="16x16">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Davide Mariani">
+<link rel="next" href="../gat-on-ppi-dataset-using-spektral/" title="GAT on PPI dataset using Spektral" type="text/html">
 <meta property="og:site_name" content="Davide Mariani's personal blog">
 <meta property="og:title" content="A quick introduction to Graph Neural Networks">
 <meta property="og:url" content="https://mariani.ai/posts/a-quick-introduction-to-graph-neural-networks/">
@@ -290,7 +291,7 @@ The whole process obviously increases in complexity when given a full adjacency 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
-<h3><strong>Transductive and inductive learning</strong></h3> <a class="anchor" id="computation-graphs"></a>
+<h3><strong>Transductive and inductive learning</strong></h3> <a class="anchor" id="transductive-inductive"></a>
 <p>There are two main problem settings when dealing with GNN applications: <strong>transductive</strong> and <strong>inductive</strong> learning.<br>
 In the first, we usually deal with a single graph and are able to see both training and testing nodes (all of them belonging to the same graph), and also the structure and connections between them. When doing a transductive learning task what we do not see are, for example, the node labels that are the prediction targets (the CORA dataset mentioned above is a good example).<br>
 Doing inductive learning is quite different, since we cannot see test nodes during training and multiple graphs can be used: basically both training and testing happen on sets of graphs. This setting has been introduced with the paper <a href="https://arxiv.org/pdf/1706.02216.pdf" target="_blank"><em>Inductive Representation Learning on Large Graphs</em></a><a href="#fn4"><sup>4</sup></a>, that presented the GraphSAGE GNN framework.<br>
@@ -341,6 +342,11 @@ The ones I came across with are mainly three:</p>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/deep-learning/" rel="tag">deep learning</a></li>
             <li><a class="tag p-category" href="../../categories/graph-neural-networks/" rel="tag">graph neural networks</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="next">
+                <a href="../gat-on-ppi-dataset-using-spektral/" rel="next" title="GAT on PPI dataset using Spektral">Next post</a>
+            </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
         
@@ -393,6 +399,12 @@ delimiters: [
   </script><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates -->
+    </script><!-- end fancy dates --><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-QR3BXMGB1N"></script><script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QR3BXMGB1N');
+  </script>
 </body>
 </html>
