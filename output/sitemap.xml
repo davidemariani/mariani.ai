@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://mariani.ai/archive.html</loc>
-  <lastmod>2022-03-19T11:48:00Z</lastmod>
+  <lastmod>2022-03-25T18:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/categories/</loc>
-  <lastmod>2022-01-08T10:41:00Z</lastmod>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/categories/deep-learning/</loc>
@@ -28,6 +28,14 @@
  <url>
   <loc>https://mariani.ai/categories/graph-neural-networks/</loc>
   <lastmod>2022-01-08T10:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariani.ai/categories/ppi/</loc>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://mariani.ai/categories/spektral/</loc>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://mariani.ai/galleries/</loc>
@@ -118,7 +126,7 @@
   <lastmod>2022-01-08T10:41:00Z</lastmod>
  </url>
  <url>
-  <loc>https://mariani.ai/posts/gat-on-ppi-dataset-using-spektral/</loc>
-  <lastmod>2022-03-19T11:48:00Z</lastmod>
+  <loc>https://mariani.ai/posts/gat-using-spektral/</loc>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
  </url>
 </urlset>

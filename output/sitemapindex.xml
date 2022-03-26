@@ -7,11 +7,19 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://mariani.ai/categories/deep-learning.xml</loc>
-  <lastmod>2022-03-19T11:04:00Z</lastmod>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/categories/graph-neural-networks.xml</loc>
-  <lastmod>2022-03-19T11:04:00Z</lastmod>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariani.ai/categories/ppi.xml</loc>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://mariani.ai/categories/spektral.xml</loc>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/galleries/demo/rss.xml</loc>
@@ -23,10 +31,10 @@
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/rss.xml</loc>
-  <lastmod>2022-03-19T11:48:00Z</lastmod>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://mariani.ai/sitemap.xml</loc>
-  <lastmod>2022-03-19T11:48:00Z</lastmod>
+  <lastmod>2022-03-25T18:51:00Z</lastmod>
  </sitemap>
 </sitemapindex>

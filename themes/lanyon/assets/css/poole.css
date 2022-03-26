@@ -165,7 +165,8 @@ pre { /* Jupyter cells */
   display: block;
   border-radius: 4px;
   padding: .6rem .5rem;
-  font-size: .65rem;
+  /* font-size: .65rem; */
+  font-weight: 400;
   line-height: 1.4;
   white-space: pre;
   overflow: auto;
@@ -173,6 +174,21 @@ pre { /* Jupyter cells */
   word-wrap: break-word;
   background-color: #f9f9f9;
 }
+
+/* If the screen size is 601px wide or more */
+@media screen and (min-width: 601px) {
+  pre {
+    font-size: .65rem;
+  }
+}
+
+/* If the screen size is 600px wide or less */
+@media screen and (max-width: 600px) {
+  pre {
+    font-size: 1.8vw;
+  }
+}
+
 pre code {
   padding: 0;
   font-size: 100%;
